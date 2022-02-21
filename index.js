@@ -35,47 +35,18 @@ function Passworizer(difficulty = 1) {
     return array.sort((a, b) => 0.5 - Math.random());
   };
 
-  const generateSimplePassword = () => {
-    const lowCharsResult = getVariousRandomChars(4, characters.lowChars);
-    const upperCharsResult = getVariousRandomChars(1, characters.upperChars);
-    const numbersResult = getVariousRandomChars(2, characters.numbers);
-    const symbolsResult = getVariousRandomChars(1, characters.symbols);
-    const temporaryResult = lowCharsResult.concat(numbersResult, symbolsResult);
-    const shuffledResult = shuffledArray(temporaryResult);
-    const joinResult = upperCharsResult.concat(shuffledResult);
-    const stringedResult = joinResult.join('');
-    return stringedResult;
-  };
-
-  const generateMediumPassword = () => {
-    const lowCharsResult = getVariousRandomChars(4, characters.lowChars);
+  const generatePassword = (lows, uppers, numbers, symbols) => {
+    const lowCharsResult = getVariousRandomChars(lows, characters.lowChars);
     const firstUpperCharsResult = getVariousRandomChars(
       1,
       characters.upperChars
     );
-    const upperCharsResult = getVariousRandomChars(3, characters.upperChars);
-    const numbersResult = getVariousRandomChars(2, characters.numbers);
-    const symbolsResult = getVariousRandomChars(2, characters.symbols);
-    const temporaryResult = lowCharsResult.concat(
-      numbersResult,
-      symbolsResult,
-      upperCharsResult
-    );
-    const shuffledResult = shuffledArray(temporaryResult);
-    const joinResult = firstUpperCharsResult.concat(shuffledResult);
-    const stringedResult = joinResult.join('');
-    return stringedResult;
-  };
-
-  const generateHardPassword = () => {
-    const lowCharsResult = getVariousRandomChars(5, characters.lowChars);
-    const firstUpperCharsResult = getVariousRandomChars(
-      1,
+    const upperCharsResult = getVariousRandomChars(
+      uppers - 1,
       characters.upperChars
     );
-    const upperCharsResult = getVariousRandomChars(5, characters.upperChars);
-    const numbersResult = getVariousRandomChars(4, characters.numbers);
-    const symbolsResult = getVariousRandomChars(4, characters.symbols);
+    const numbersResult = getVariousRandomChars(numbers, characters.numbers);
+    const symbolsResult = getVariousRandomChars(symbols, characters.symbols);
     const temporaryResult = lowCharsResult.concat(
       numbersResult,
       symbolsResult,
@@ -89,13 +60,13 @@ function Passworizer(difficulty = 1) {
 
   switch (difficulty) {
     case 1:
-      return generateSimplePassword();
+      return generatePassword(4, 1, 2, 1);
     case 2:
-      return generateMediumPassword();
+      return generatePassword(4, 4, 2, 2);
     case 3:
-      return generateHardPassword();
+      return generatePassword(5, 5, 4, 4);
     default:
-      return generateSimplePassword;
+      return generatePassword(4, 1, 2, 1);
   }
 }
 
