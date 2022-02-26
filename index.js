@@ -4,14 +4,6 @@ function Passworizer(difficulty) {
   // Maximum difficulty
   if (difficulty > 3) throw new Error('Maximun level of compression is: 3');
 
-  // Characters
-  const characters = {
-    lowChars: 'abcdefghijklmnopqrstuvwxyz', // 26
-    upperChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', // 26
-    numbers: '0123456789', //10
-    symbols: '@#$%&-_=+()[]{}<>.!?"', //21
-  };
-
   // Gets 1 random caracter from a characters type
   const getOneRandomChar = (string) => {
     if (typeof string !== 'string') throw new Error('Error: String type');
