@@ -28,7 +28,7 @@ let password = Passworizer();
 
 let password = Passworizer(0);
 // result: X0cuvk8L
-// Difficulty 0: 8 Characters (4 Lowercase, 2 Uppercase, 2 Numbers, 0 Symbol) 
+// Difficulty 0: 8 Characters (4 Lowercase, 2 Uppercase, 2 Numbers, 0 Symbol)  // No symbols
 
 let password = Passworizer(1);
 // result: Vm1da<n8 
