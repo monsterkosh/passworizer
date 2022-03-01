@@ -40,7 +40,7 @@ let password = Passworizer(2);
 
 let password = Passworizer(3);
 // result: Wmc2(11YdO?F6u$-jT
-// : 18 Characters (5 Lowercase, 5 Uppercase, 4 Numbers, 4 Symbol)
+// Difficulty 3: 18 Characters (5 Lowercase, 5 Uppercase, 4 Numbers, 4 Symbol)
 
 let password = PassworizerAsync() 
 // Takes the same parameters (0, 1, 2, 3)
