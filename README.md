@@ -1,12 +1,20 @@
 # Passworizer ![Build Status](https://travis-ci.org/mrhooray/rpg.png?branch=master)
 
 
+Passworizer is simple but robust random password generator, it can generate
+different levels of passwords with millons combinations.
+
+Randomizes each character individually and then scrambles all to generate
+even a more random combination for you to use.
+It uses upper case letters, lower case letters, numbers and special characters.
+
+
 ## Installation
 $ npm install passworizer
 
 
 ### About Passworizer
-Passwords will always start with a Capital Letter for convenience.
+Passwords will always start with aa Upper Case Letter for convenience.
 
 If no parameters are passed, it will return a Level 1 Passoword (see below).
 
